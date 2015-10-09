@@ -17,8 +17,8 @@
 
 <!-- Search form -->
 <form>
-    <input type="text" placeholder="Search..." required>
-    <input type="button" value="Search">
+    <input id="search" type="text" placeholder="Search..." required>
+    <input id='searchButton' type="button" value="Search">
 </form>
 
 <!-- Template for displaying search results -->
@@ -41,6 +41,7 @@
 
         Total calories: {{total}}
     </div>
+    <input id='addToList' type="button" value="Add Product">
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -52,8 +53,8 @@
 <!-- Custom JS -->
 <script src="js/models/item.js"></script>
 <script src="js/collections/items.js"></script>
-<script src="js/views/results.js"></script>
 <script src="js/views/summary.js"></script>
+<script src="js/views/results.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
