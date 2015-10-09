@@ -3,6 +3,7 @@
  */
 var app = app || {};
 
+//Create a collection to store received/added items
 app.ItemList = Backbone.Collection.extend({
     model: app.Item
 });

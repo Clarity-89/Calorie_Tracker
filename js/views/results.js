@@ -30,6 +30,8 @@ app.ResultsView = Backbone.View.extend({
         //if (results){
         this.$el.html(template(this.model.toJSON()));
         //}
+
+        return this;
     },
 
     search: function () {
