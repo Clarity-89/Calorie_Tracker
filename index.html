@@ -32,7 +32,7 @@
 </script>
 
 <!-- Template for displaying selected products and total calories-->
-<script id="selectedProducts" type="text/x-handlebars-template">
+<script id="summary" type="text/x-handlebars-template">
     <div>
         {{#each []}}
         {{this.name}} Calories: {{this.calories}}
@@ -49,5 +49,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js"></script>
+<!-- Custom JS -->
+<script src="js/models/item.js"></script>
+<script src="js/collections/items.js"></script>
+<script src="js/views/results.js"></script>
+<script src="js/views/summary.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
