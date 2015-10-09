@@ -15,15 +15,38 @@
 </head>
 <body>
 
+<!-- Search form -->
 <form>
     <input type="text" placeholder="Search..." required>
     <input type="button" value="Search">
 </form>
 
+<!-- Template for displaying search results -->
+<script id="searchResults" type="text/x-handlebars-template">
+    <div>
+        {{#each []}}
+        {{this.name}} Calories: {{this.calories}}
+
+        {{/each}}
+    </div>
+</script>
+
+<!-- Template for displaying selected products and total calories-->
+<script id="selectedProducts" type="text/x-handlebars-template">
+    <div>
+        {{#each []}}
+        {{this.name}} Calories: {{this.calories}}
+
+        {{/each}}
+
+        Total calories: {{total}}
+    </div>
+</script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js"></script>
 </body>
