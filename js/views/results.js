@@ -12,15 +12,17 @@ app.ResultsView = Backbone.View.extend({
     template: Handlebars.compile($('#searchResults').html()),
 
     events: {
-        'click #searchButton': 'search',
+        'click .searchButton': 'search',
         'click #addToList': 'addItem',
         'keypress #search': 'search'
     },
 
     initialize: function () {
-        this.$searchButton = this.$('#searchButton');
+        console.log('initialized');
+        this.$searchButton = this.$('.searchButton');
         this.$search = this.$('#search');
-        this.listenTo(app.ItemList, 'all', this.render);
+        this.listenTo(this.model, 'all', this.render);
+        this.listenTo(this.$searchButton, 'all', this.render);
     },
 
     render: function () {
@@ -33,7 +35,7 @@ app.ResultsView = Backbone.View.extend({
 
         return this;
     },
-
+    /*Function to send an AJAX request and retrieve tha data according to the search keyword and store it in the model*/
     search: function () {
         console.log('search button pressed');
         var query = this.$search.val().trim();
@@ -44,9 +46,9 @@ app.ResultsView = Backbone.View.extend({
             "query": query
         };
 
-        $.getJSON("https://api.nutritionix.com/v1_1/search -H 'Content-Type: application/json' -d'", data, function (res) {
+        /*$.getJSON("https://api.nutritionix.com/v1_1/search -H 'Content-Type: application/json' -d'", data, function (res) {
             console.log(res);
-        });
+        });*/
     }
 });
 
