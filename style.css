@@ -1,0 +1,22 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    float: left;
+}
+
+.container-fluid{
+    min-height: 70%;
+}
+#hits {
+    min-height: 200px;
+    border: 1px black solid;
+}
+
+#selection {
+    min-height: 40%;
+    border: 1px black solid;
+}

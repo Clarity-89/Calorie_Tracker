@@ -14,19 +14,22 @@
 
 </head>
 <body>
-
-<!-- Search form -->
-<form>
-    <input id="search" type="text" placeholder="Search..." required>
-    <input id='searchButton' type="button" value="Search">
-</form>
-<div id="hits">
-
-
+<div class="container-fluid">
+    <!-- Search form -->
+    <form>
+        <input id="search" type="text" placeholder="Search..." required>
+        <input id='searchButton' type="button" value="Search">
+    </form>
+    <div class="row">
+        <div id="hits" class="col-md-6"></div>
+        <div id="selection" class="col-md-6"></div>
+    </div>
 </div>
+
+
 <!-- Template for displaying search results -->
 <script id="searchResults" type="text/x-handlebars-template">
-
+    <p>Search results</p>
     {{#if []}}
 
     <ul>{{#each []}}
@@ -51,8 +54,8 @@
     </ul>
 </script>
 
-<script id="total" type="text/x-handlebars-template">Total calories: {{this.total}}</script>
-<div id="selection"></div>
+<script id="total" type="text/x-handlebars-template"><p>Total calories: {{this.total}}</p></script>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
