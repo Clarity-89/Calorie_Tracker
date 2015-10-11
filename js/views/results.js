@@ -19,7 +19,7 @@ app.ResultsView = Backbone.View.extend({
     initialize: function () {
         console.log('initialized');
         this.$searchButton = this.$('.searchButton');
-        this.$search = this.$('#search');
+        this.$input = this.$('#search');
         this.$hits = this.$('#hits');
         this.listenTo(app.Items, 'all', this.render);
     },
@@ -36,34 +36,50 @@ app.ResultsView = Backbone.View.extend({
     },
     /*Function to send an AJAX request and retrieve tha data according to the search keyword and store it in the model*/
     search: function () {
-        console.log('search button pressed');
-        console.log('model: ', this.Items);
-        var query = this.$search.val().trim();
-        console.log(query);
-        var data = {
-            "appId": "13957b27",
-            "appKey": "634647fd3fadbe686dbaacdbea287beb",
-            "fields": "item_name,nf_calories"
-        };
+        if (this.$input.val()) {
+            //this.clearSearch();
+            console.log('search button pressed');
+            console.log('model: ', this.Items);
+            var query = this.$input.val().trim();
+            console.log(query);
+            var data = {
+                "appId": "13957b27",
+                "appKey": "634647fd3fadbe686dbaacdbea287beb",
+                "fields": "item_name,nf_calories"
+            };
 
-        $.getJSON("https://api.nutritionix.com/v1_1/search/" + query, data, function (res) {
-            console.log('Res', res.hits);
-            res.hits.forEach(function (el) {
+            $.getJSON("https://api.nutritionix.com/v1_1/search/" + query, data, function (res) {
+                console.log('Res', res.hits);
 
-                app.Items.create({
-                    name: el.fields.item_name,
-                    calories: el.fields.nf_calories
+                app.Items.reset();
+                res.hits.forEach(function (el) {
+
+                    app.Items.create({
+                        name: el.fields.item_name,
+                        calories: el.fields.nf_calories
+                    });
                 });
-            });
 
-        });
+            });
+        }
     },
 
     searchOnEnter: function () {
-        if (event.which == ENTER_KEY) {
+        if (event.which == ENTER_KEY && this.$input.val()) {
+            //this.clearSearch();
             event.preventDefault();
             this.search();
+            this.$input.val('');
         }
+
+    },
+
+    clearSearch: function () {
+
+        if (app.Items) {
+            _.invoke(app.Items, 'destroy');
+        }
+        return false;
     }
 
 
