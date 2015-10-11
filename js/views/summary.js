@@ -17,14 +17,14 @@ app.SummaryView = Backbone.View.extend({
     },
 
     render: function () {
+        //Calculate the total amount of calories in the selection of items
         var total = 0;
         app.Selected.forEach(function (el) {
             total += el.get('calories');
         });
         var source = {total: total};
         //console.log('total: ', total)
-        this.$selection.html(this.template(app.Selected.toJSON()));
-        this.$selection.append(this.template2(source));
+        this.$selection.html(this.template(app.Selected.toJSON())).append(this.template2(source));
 
         return this;
     }
