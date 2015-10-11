@@ -6,7 +6,7 @@
 var app = app || {};
 
 app.ResultsView = Backbone.View.extend({
-
+    collection: app.Items,
     el: 'body',
     template: Handlebars.compile($('#searchResults').html()),
 
@@ -20,11 +20,11 @@ app.ResultsView = Backbone.View.extend({
         console.log('initialized');
         this.$input = this.$('#search');
         this.$hits = this.$('#hits');
-        this.listenTo(app.Items, 'all', this.render);
+        this.listenTo(this.collection, 'all', this.render);
     },
 
     render: function () {
-        this.$hits.html(this.template(app.Items.toJSON()));
+        this.$hits.html(this.template(this.collection.toJSON()));
 
         return this;
     },
@@ -70,7 +70,7 @@ app.ResultsView = Backbone.View.extend({
         //console.log($(e.currentTarget).parent().data("id"));
         e.preventDefault();
         var id = $(e.currentTarget).parent().data("id");
-        var item = app.Items.get(id);
+        var item = this.collection.get(id);
         console.log(app.Selected);
         app.Selected.add(item);
     }
