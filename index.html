@@ -18,7 +18,7 @@
 <!-- Search form -->
 <form>
     <input id="search" type="text" placeholder="Search..." required>
-    <input class='searchButton' type="button" value="Search">
+    <input id='searchButton' type="button" value="Search">
 </form>
 <div id="hits">
 
@@ -29,11 +29,13 @@
     <div>
         {{#if []}}
         {{#each []}}
-       <li class="hit"> {{this.name}} <br> Calories: {{this.calories}} </li>
+        <li class="hit"> {{this.name}} <br> Calories: {{this.calories}}</li>
+        <input id='addToList' type="button" value="Add Product">
         {{/each}}
         {{else}}
         <p>No results for your search</p>
         {{/if}}
+
     </div>
 </script>
 
@@ -47,7 +49,7 @@
 
         Total calories: {{total}}
     </div>
-    <input id='addToList' type="button" value="Add Product">
+
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

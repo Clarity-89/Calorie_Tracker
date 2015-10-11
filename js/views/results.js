@@ -11,30 +11,24 @@ app.ResultsView = Backbone.View.extend({
     template: Handlebars.compile($('#searchResults').html()),
 
     events: {
-        'click .searchButton': 'search',
+        'click #searchButton': 'search',
         'click #addToList': 'addItem',
         'keypress #search': 'searchOnEnter'
     },
 
     initialize: function () {
         console.log('initialized');
-        this.$searchButton = this.$('.searchButton');
         this.$input = this.$('#search');
         this.$hits = this.$('#hits');
         this.listenTo(app.Items, 'all', this.render);
     },
 
     render: function () {
-        //console.log('rendering');
-        //var results = app.ItemList.length;
-
-        //if (results){
         this.$hits.html(this.template(app.Items.toJSON()));
-        //}
 
         return this;
     },
-    /*Function to send an AJAX request and retrieve tha data according to the search keyword and store it in the model*/
+    /*Function to send an AJAX request and retrieve the data according to the search keyword and store it in the model*/
     search: function () {
         if (this.$input.val()) {
             console.log('search button pressed');
