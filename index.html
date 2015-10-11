@@ -27,10 +27,13 @@
 <!-- Template for displaying search results -->
 <script id="searchResults" type="text/x-handlebars-template">
     <div>
+        {{#if []}}
         {{#each []}}
        <li class="hit"> {{this.name}} <br> Calories: {{this.calories}} </li>
-
         {{/each}}
+        {{else}}
+        <p>No results for your search</p>
+        {{/if}}
     </div>
 </script>
 
