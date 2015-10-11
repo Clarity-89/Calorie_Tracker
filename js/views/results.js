@@ -43,7 +43,7 @@ app.ResultsView = Backbone.View.extend({
 
             $.getJSON("https://api.nutritionix.com/v1_1/search/" + query, data, function (res) {
                 console.log('Res', res.hits);
-                // Clear the results list before filling it with a new one
+                // Clear the results list before filling it with new ones
                 app.Items.reset();
 
                 res.hits.forEach(function (el) {
