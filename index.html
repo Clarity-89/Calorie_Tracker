@@ -26,31 +26,32 @@
 </div>
 <!-- Template for displaying search results -->
 <script id="searchResults" type="text/x-handlebars-template">
-    <div>
-        {{#if []}}
-        {{#each []}}
-        <li class="hit"> {{this.name}} <br> Calories: {{this.calories}}</li>
-        <input id='addToList' type="button" value="Add Product">
-        {{/each}}
-        {{else}}
-        <p>No results for your search</p>
-        {{/if}}
 
-    </div>
+    {{#if []}}
+
+    <ul>{{#each []}}
+        <li class="hit" data-id="{{id}}"> {{this.name}} <br> Calories: {{this.calories}}
+            <input id='addToList' type="button" value="Add Product"></li>
+        {{/each}}
+    </ul>
+
+    {{else}}
+    <p>No results for your search</p>
+    {{/if}}
+
 </script>
 
 <!-- Template for displaying selected products and total calories-->
 <script id="summary" type="text/x-handlebars-template">
-    <div>
+    <ul>
         {{#each []}}
-        {{this.name}} Calories: {{this.calories}}
-
+        <li class="selected_hits" data-id="{{id}}"> {{this.name}} <br> Calories: {{this.calories}}</li>
         {{/each}}
-
-        Total calories: {{total}}
-    </div>
+    </ul>
+    Total calories: {{total}}
 
 </script>
+<div id="selection"></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
@@ -60,7 +61,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js"></script>
 <!-- Custom JS -->
 <script src="js/models/item.js"></script>
+<script src="js/models/selectedItem.js"></script>
 <script src="js/collections/items.js"></script>
+<script src="js/collections/selection.js"></script>
 <script src="js/views/summary.js"></script>
 <script src="js/views/results.js"></script>
 <script src="js/app.js"></script>

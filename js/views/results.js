@@ -46,7 +46,7 @@ app.ResultsView = Backbone.View.extend({
                 // Clear the results list before filling it with new ones
                 app.Items.reset();
 
-                res.hits.forEach(function (el) {
+                res.hits.forEach(function (el, i) {
                     app.Items.create({
                         name: el.fields.item_name,
                         calories: el.fields.nf_calories
@@ -63,6 +63,16 @@ app.ResultsView = Backbone.View.extend({
             this.search();
         }
 
+    },
+
+    //Function to add selected item to the user's list
+    addItem: function (e) {
+        //console.log($(e.currentTarget).parent().data("id"));
+        e.preventDefault();
+        var id = $(e.currentTarget).parent().data("id");
+        var item = app.Items.get(id);
+        console.log(app.Selected);
+        app.Selected.add(item);
     }
 });
 

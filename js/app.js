@@ -5,8 +5,9 @@
 var app = app || {};
 var ENTER_KEY = 13;
 
-$(function() {
+$(function () {
 
     new app.ResultsView();
+    new app.SummaryView();
 
 });
