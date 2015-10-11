@@ -20,16 +20,16 @@ app.ResultsView = Backbone.View.extend({
         console.log('initialized');
         this.$searchButton = this.$('.searchButton');
         this.$search = this.$('#search');
-        this.listenTo(this.model, 'all', this.render);
-        //this.listenTo(this.$searchButton, 'all', this.render);
+        this.$hits = this.$('#hits');
+        this.listenTo(app.Items, 'all', this.render);
     },
 
     render: function () {
-        console.log('rendering');
+        console.log('rendering')
         //var results = app.ItemList.length;
 
         //if (results){
-        this.$el.html(template(this.model.toJSON()));
+        this.$hits.html(this.template(app.Items.toJSON()));
         //}
 
         return this;
@@ -37,17 +37,25 @@ app.ResultsView = Backbone.View.extend({
     /*Function to send an AJAX request and retrieve tha data according to the search keyword and store it in the model*/
     search: function () {
         console.log('search button pressed');
-
+        console.log('model: ', this.Items);
         var query = this.$search.val().trim();
         console.log(query);
         var data = {
             "appId": "13957b27",
             "appKey": "634647fd3fadbe686dbaacdbea287beb",
-            "fields": "nf_calories"
+            "fields": "item_name,nf_calories"
         };
 
         $.getJSON("https://api.nutritionix.com/v1_1/search/" + query, data, function (res) {
-            console.log('Res', res);
+            console.log('Res', res.hits);
+            res.hits.forEach(function (el) {
+
+                app.Items.create({
+                    name: el.fields.item_name,
+                    calories: el.fields.nf_calories
+                });
+            });
+
         });
     },
 

@@ -20,12 +20,15 @@
     <input id="search" type="text" placeholder="Search..." required>
     <input class='searchButton' type="button" value="Search">
 </form>
+<div id="hits">
 
+
+</div>
 <!-- Template for displaying search results -->
 <script id="searchResults" type="text/x-handlebars-template">
     <div>
         {{#each []}}
-        {{this.name}} Calories: {{this.calories}}
+        {{this.name}} Calories: {{this.calories}} <br>
 
         {{/each}}
     </div>
