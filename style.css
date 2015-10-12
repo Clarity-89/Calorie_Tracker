@@ -3,20 +3,31 @@ html, body {
     width: 100%;
 }
 
-ul {
-    list-style-type: none;
-    float: left;
+* {
+    margin: 0 auto;
+    padding: 0;
 }
 
-.container-fluid{
-    min-height: 70%;
+ul {
+    list-style-type: none;
+}
+
+.container-fluid {
+    margin: 1% auto;
+}
+
+#head {
+    text-align: center;
 }
 #hits {
-    min-height: 200px;
-    border: 1px black solid;
+    background-color: aquamarine;
 }
 
 #selection {
-    min-height: 40%;
-    border: 1px black solid;
+
+    background-color: #c10f26;
+}
+
+#searchForm {
+    margin: 1%;
 }
