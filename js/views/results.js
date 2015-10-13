@@ -18,12 +18,15 @@ app.ResultsView = Backbone.View.extend({
 
     initialize: function () {
         console.log('initialized');
+
         this.$input = this.$('#search');
         this.$hits = this.$('#hits');
+        this.listenTo(app.Item, 'all', this.render);
         this.listenTo(this.collection, 'all', this.render);
     },
 
     render: function () {
+        //console.log('rendering');
         this.$hits.html(this.template(this.collection.toJSON()));
 
         return this;
@@ -31,29 +34,13 @@ app.ResultsView = Backbone.View.extend({
     /*Function to send an AJAX request and retrieve the data according to the search keyword and store it in the model*/
     search: function () {
         if (this.$input.val()) {
-            console.log('search button pressed');
+            //console.log('search button pressed');
 
             var query = this.$input.val().trim();
-            console.log(query);
-            var data = {
-                "appId": "13957b27",
-                "appKey": "634647fd3fadbe686dbaacdbea287beb",
-                "fields": "item_name,nf_calories",
-                results: '0:50'
-            };
+            //console.log(query);
+            app.Items.query = this.$input.val().trim();
+            app.Items.fetch();
 
-            $.getJSON("https://api.nutritionix.com/v1_1/search/" + query, data, function (res) {
-                console.log('Res', res.hits);
-                // Clear the results list before filling it with new ones
-                app.Items.reset();
-
-                res.hits.forEach(function (el, i) {
-                    app.Items.create({
-                        name: el.fields.item_name,
-                        calories: el.fields.nf_calories,
-                    });
-                });
-            });
         }
     },
 
@@ -71,8 +58,8 @@ app.ResultsView = Backbone.View.extend({
         //console.log($(e.currentTarget).parent().data("id"));
         e.preventDefault();
         var id = $(e.currentTarget).parent().data("id");
-        var item = this.collection.get(id);
-        console.log(app.Selected);
+        var item = app.Items.get(id);
+        console.log(item);
         app.Selected.add(item);
     }
 });

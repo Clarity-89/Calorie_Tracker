@@ -10,6 +10,15 @@ app.Item = Backbone.Model.extend({
     defaults: {
         name: '',
         calories: 0
+    },
+
+    parse: function (res) {
+        console.log('id', this);
+        return {
+            id: this.cid + new Date().valueOf(), //Generate semi-unique id for an item
+            name: res.fields.item_name,
+            calories: res.fields.nf_calories
+        };
     }
 });
 
