@@ -20,9 +20,11 @@
 
 <div class="container-fluid">
     <!-- Search form -->
-    <form id="searchForm">
-        <input id="search" type="text" placeholder="Search..." required>
-        <input id='searchButton' type="button" value="Search">
+    <form class="form-inline" id="searchForm">
+        <div class="form-group">
+            <input class="form-control" id="search" type="text" placeholder="Search..." required>
+            <input class="btn btn-default" id='searchButton' type="button" value="Search">
+        </div>
     </form>
     <div class="row">
         <div id="hits" class="col-md-6"></div>

@@ -21,7 +21,7 @@ app.ResultsView = Backbone.View.extend({
 
         this.$input = this.$('#search');
         this.$hits = this.$('#hits');
-        this.listenTo(app.Item, 'all', this.render);
+        //this.listenTo(this.model, 'all', this.render);
         this.listenTo(this.collection, 'all', this.render);
     },
 
@@ -35,12 +35,10 @@ app.ResultsView = Backbone.View.extend({
     search: function () {
         if (this.$input.val()) {
             //console.log('search button pressed');
-
             var query = this.$input.val().trim();
             //console.log(query);
             app.Items.query = this.$input.val().trim();
             app.Items.fetch();
-
         }
     },
 
