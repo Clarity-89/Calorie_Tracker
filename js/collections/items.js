@@ -13,9 +13,10 @@ var ItemList = Backbone.Collection.extend({
         "fields": "item_name,nf_calories",
         results: '0:50'
     },
+
+    //Return url for AJAX request with a dynamic query from the search form
     url: function () {
-        console.log('q', this.query)
-        return "https://api.nutritionix.com/v1_1/search/" + this.query + '?' + $.param(this.data);
+       return "https://api.nutritionix.com/v1_1/search/" + this.query + '?' + $.param(this.data);
     },
 
 
