@@ -26,7 +26,7 @@ app.ResultsView = Backbone.View.extend({
     render: function () {
         this.$hits.html(this.template(this.collection.toJSON()));
 
-        return this;
+            return this;
     },
     /*Function to send an AJAX request and retrieve the data according to the search keyword and store it in the model*/
     search: function () {

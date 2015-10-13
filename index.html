@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <!-- CSS for jQuery DataTables -->
-   <link rel="stylesheet" href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 
@@ -30,13 +30,14 @@
     </div>
 </div>
 
-
+<div id="smart-paginator"></
+>
 <!-- Template for displaying search results -->
 <script id="searchResults" type="text/x-handlebars-template">
     <p>Search results</p>
     {{#if []}}
 
-    <ul>{{#each []}}
+    <ul id="paginate">{{#each []}}
         <li class="hit list-group-item" data-id="{{id}}"> {{this.name}} <br> Calories: {{this.calories}}
             <input id='addToList' type="button" value="Add Product"></li>
         {{/each}}
@@ -62,11 +63,11 @@
 
 <!-- Libraries and frameworks -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
 <script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+<script src="js/libs/backbone.paginator.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js"></script>
 <!-- Custom JS -->
 <script src="js/models/item.js"></script>

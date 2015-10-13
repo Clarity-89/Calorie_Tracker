@@ -10,4 +10,6 @@ var ItemList = Backbone.Collection.extend({
     localStorage: new Backbone.LocalStorage('items')
 });
 
-app.Items = new ItemList();
+app.Items = new ItemList([], {
+    mode: "client"
+});
