@@ -50,7 +50,7 @@
 <script id="summary" type="text/x-handlebars-template">
     <ul>
         {{#each []}}
-        <li class="selected_hits" data-id="{{id}}"> {{this.name}} <br> Calories: {{this.calories}}
+        <li class="selected_hits list-group-item" data-id="{{id}}"> {{this.name}} <br> Calories: {{this.calories}}
             <input id='removeFromList' type="button" value="Remove Product"></li>
         {{/each}}
     </ul>

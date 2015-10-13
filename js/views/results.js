@@ -38,7 +38,8 @@ app.ResultsView = Backbone.View.extend({
             var data = {
                 "appId": "13957b27",
                 "appKey": "634647fd3fadbe686dbaacdbea287beb",
-                "fields": "item_name,nf_calories"
+                "fields": "item_name,nf_calories",
+                results: '0:50'
             };
 
             $.getJSON("https://api.nutritionix.com/v1_1/search/" + query, data, function (res) {
@@ -49,7 +50,7 @@ app.ResultsView = Backbone.View.extend({
                 res.hits.forEach(function (el, i) {
                     app.Items.create({
                         name: el.fields.item_name,
-                        calories: el.fields.nf_calories
+                        calories: el.fields.nf_calories,
                     });
                 });
             });
