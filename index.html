@@ -30,8 +30,6 @@
     </div>
 </div>
 
-<div id="smart-paginator"></
->
 <!-- Template for displaying search results -->
 <script id="searchResults" type="text/x-handlebars-template">
     <p>Search results</p>
@@ -51,6 +49,7 @@
 
 <!-- Template for displaying selected products and total calories-->
 <script id="summary" type="text/x-handlebars-template">
+    <p>Your selection</p>
     <ul>
         {{#each []}}
         <li class="selected_hits list-group-item" data-id="{{id}}"> {{this.name}} <br> Calories: {{this.calories}}
