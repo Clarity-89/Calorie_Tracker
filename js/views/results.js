@@ -28,7 +28,7 @@ app.ResultsView = Backbone.View.extend({
     render: function () {
         //console.log('rendering');
         this.$hits.html(this.template(this.collection.toJSON()));
-
+        $("#paginator").append(paginator.render().$el);
         return this;
     },
     /*Function to send an AJAX request and retrieve the data according to the search keyword and store it in the model*/
