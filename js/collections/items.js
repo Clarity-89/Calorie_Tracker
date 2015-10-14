@@ -4,7 +4,7 @@
 var app = app || {};
 
 //Create a collection to store received/added items
-var ItemList = Backbone.Collection.extend({
+var ItemList = Backbone.PageableCollection.extend({
     model: app.Item,
 
     data: {
