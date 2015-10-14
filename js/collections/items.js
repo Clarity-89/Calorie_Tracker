@@ -8,8 +8,9 @@ var ItemList = Backbone.PageableCollection.extend({
     model: app.Item,
     mode: "client",
 
+    // Override default pagination states
     state: {
-        pageSize: 10
+        pageSize: 10 //Show 10 results per page
     },
 
     data: {
