@@ -3,7 +3,7 @@
  */
 var app = app || {};
 
-//Create a collection to store received/added items
+//Create a pageable collection to store received/added items
 var ItemList = Backbone.PageableCollection.extend({
     model: app.Item,
     mode: "client",
@@ -20,7 +20,7 @@ var ItemList = Backbone.PageableCollection.extend({
         results: '0:50'
     },
 
-    //Return url for AJAX request with a dynamic query from the search form
+    //Create a url for AJAX request with a dynamic query from the search form
     url: function () {
         return "https://api.nutritionix.com/v1_1/search/" + this.query + '?' + $.param(this.data);
     },
@@ -35,23 +35,6 @@ var ItemList = Backbone.PageableCollection.extend({
 
 app.Items = new ItemList();
 
-/*var columns = [{
- name: "id",
- editable: false,
- cell: Backgrid.IntegerCell.extend({
- orderSeparator: ''
- })
- }, {
- name: "name",
- cell: "string"
- }, {
- name: "calories",
- cell: "integer"
- }];
- var grid = new Backgrid.Grid({
- columns: columns,
- collection: app.Items
- });*/
 var paginator = new Backgrid.Extension.Paginator({
     collection: app.Items
 });
