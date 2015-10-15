@@ -34,7 +34,7 @@ app.SummaryView = Backbone.View.extend({
         });
         var source = {total: total.toFixed(2)};
         this.$selection.html(this.template(this.collection.toJSON())).append(this.template2(source));
-
+        if (this.collection.length > 0) $('#clear-selection').css('display', 'inline-block');
         return this;
     },
 
