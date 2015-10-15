@@ -5,7 +5,7 @@ var app = app || {};
 
 // Model to store items added by user
 app.SelectedItem = Backbone.Model.extend({
-
+    localStorage: new Backbone.LocalStorage('selected-items'),
     defaults: {
         name: '',
         calories: 0

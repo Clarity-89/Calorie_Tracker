@@ -45,5 +45,6 @@ app.SummaryView = Backbone.View.extend({
         var id = $(e.currentTarget).parent().data("id");
         var item = this.collection.get(id);
         this.collection.remove(item);
+        item.destroy();
     }
 });

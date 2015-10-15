@@ -12,12 +12,17 @@ app.Item = Backbone.Model.extend({
         calories: 0
     },
 
+
     parse: function (res) {
-        return {
-            id: this.cid + new Date().valueOf(), //Generate semi-unique id for an item
-            name: res.fields.item_name,
-            calories: res.fields.nf_calories
-        };
+        if (res) {
+
+
+            return {
+                id: this.cid + new Date().valueOf(), //Generate semi-unique id for an item
+                name: res.fields.item_name,
+                calories: res.fields.nf_calories
+            };
+        }
     }
 });
 

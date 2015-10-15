@@ -54,19 +54,19 @@ app.ResultsView = Backbone.View.extend({
 
     //Function to add selected item to the user's list
     addItem: function (e) {
-        //console.log($(e.currentTarget).parent().data("id"));
         e.preventDefault();
         var id = $(e.currentTarget).parent().data("id");
         var item = app.Items.get(id);
-        console.log(item.attributes);
-        //Create a new model with the attributes of a Items model in order to be able to save it to local storage
+
+        /*Create a new model with the attributes of a Items model in order to be able to save it to local storage
+         and delete separately from the items in results */
         var selItem = new app.SelectedItem({
             id: item.attributes.id,
             name: item.attributes.name,
             calories: item.attributes.calories
         });
         app.Selected.add(selItem);
-        selItem.save();
+
 
     }
 });

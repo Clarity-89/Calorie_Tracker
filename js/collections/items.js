@@ -27,10 +27,9 @@ var ItemList = Backbone.PageableCollection.extend({
 
 
     parse: function (res) {
-        console.log(res.hits);
         return res.hits;
     }
-    //localStorage: new Backbone.LocalStorage('items')
+
 });
 
 app.Items = new ItemList();
