@@ -54,3 +54,13 @@ ul {
     cursor: pointer;
     background-color: #d1d1d1;
 }
+
+#totalCal {
+    font-size: 16px;
+}
+
+#no-results {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20%;
+}

@@ -49,7 +49,7 @@
     <h2 class="title">Search results</h2>
     {{#if []}}
 
-    <ul id="paginate">{{#each []}}
+    <ul>{{#each []}}
         <li class="hit list-group-item" data-id="{{id}}"> {{this.name}}
             <i id="addToList" class="fa fa-plus fa-2x"></i> <br>
             Calories: {{this.calories}}
@@ -58,7 +58,7 @@
     </ul>
 
     {{else}}
-    <p>No results for your search</p>
+    <p id="no-results">No results for your search</p>
     {{/if}}
 
 </script>
@@ -76,7 +76,7 @@
     </ul>
 </script>
 
-<script id="total" type="text/x-handlebars-template"><p>Total calories: {{this.total}}</p></script>
+<script id="total" type="text/x-handlebars-template"><p id="totalCal">Total calories: {{this.total}}</p></script>
 
 <!-- Libraries and frameworks -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

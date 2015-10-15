@@ -28,7 +28,7 @@ app.ResultsView = Backbone.View.extend({
     render: function () {
         //console.log('rendering');
         this.$hits.html(this.template(this.collection.toJSON()));
-        $("#paginator").append(paginator.render().$el);
+        if (this.collection.length > 0) $("#paginator").append(paginator.render().$el);
 
         return this;
     },

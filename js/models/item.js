@@ -16,7 +16,6 @@ app.Item = Backbone.Model.extend({
     parse: function (res) {
         if (res) {
 
-
             return {
                 id: this.cid + new Date().valueOf(), //Generate semi-unique id for an item
                 name: res.fields.item_name,
