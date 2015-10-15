@@ -9,6 +9,9 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+    <!-- Load fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
     <!-- CSS for jQuery DataTables -->
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
 
@@ -43,7 +46,7 @@
 
 <!-- Template for displaying search results -->
 <script id="searchResults" type="text/x-handlebars-template">
-    <p>Search results</p>
+    <h2 class="title">Search results</h2>
     {{#if []}}
 
     <ul id="paginate">{{#each []}}
@@ -60,7 +63,7 @@
 
 <!-- Template for displaying selected products and total calories-->
 <script id="summary" type="text/x-handlebars-template">
-    <p>Your selection</p>
+    <h2 class="title">Your selection</h2>
     <ul>
         {{#each []}}
         <li class="selected_hits list-group-item" data-id="{{id}}"> {{this.name}} <br> Calories: {{this.calories}}

@@ -49,7 +49,6 @@ app.ResultsView = Backbone.View.extend({
             event.preventDefault();
             this.search();
         }
-
     },
 
     //Function to add selected item to the user's list
