@@ -65,7 +65,7 @@
 
 <!-- Template for displaying selected products and total calories-->
 <script id="summary" type="text/x-handlebars-template">
-    <h2 class="title">Your selection</h2>
+    <h2 class="title">Your selection</h2>  <i id="clear-selection" class="fa fa-trash-o fa-2x"></i>
     <ul>
         {{#each []}}
         <li class="hit list-group-item" data-id="{{id}}"> {{this.name}}

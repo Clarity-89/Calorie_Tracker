@@ -19,10 +19,11 @@ body {
 
 ul {
     list-style-type: none;
+    margin-top: 4%;
 }
 
 .list-group-item {
-    color: #5C5863
+    color: #5C5863;
 }
 
 .container-fluid {
@@ -31,6 +32,7 @@ ul {
 
 .title {
     text-align: center;
+    display: inline;
 }
 
 #head {
@@ -63,4 +65,23 @@ ul {
     font-size: 20px;
     text-align: center;
     margin-top: 20%;
+}
+
+#clear-selection {
+    float: right;
+    transition: all .2s ease-in-out;
+    margin-right: 10px;
+}
+#clear-selection:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+#clear-selection:hover:after {
+    content: 'Clear selected items';
+    position: absolute;
+    color: #fff;
+    font-size: 12px;
+    left: 30px;
+    bottom: 0;
+
 }
