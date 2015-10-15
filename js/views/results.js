@@ -66,8 +66,7 @@ app.ResultsView = Backbone.View.extend({
             calories: item.attributes.calories
         });
         app.Selected.add(selItem);
-
-
+        selItem.save();
     }
 });
 

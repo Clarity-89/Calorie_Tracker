@@ -25,7 +25,6 @@ app.SummaryView = Backbone.View.extend({
 
     render: function () {
         //console.log('rendering summary');
-        //app.Selected.localStorage = new Backbone.LocalStorage('selected-items');
 
         //Calculate the total amount of calories in the selection of items
         var total = 0;
@@ -33,7 +32,6 @@ app.SummaryView = Backbone.View.extend({
             total += el.get('calories');
         });
         var source = {total: total.toFixed(2)};
-        //console.log('total: ', total)
         this.$selection.html(this.template(this.collection.toJSON())).append(this.template2(source));
 
         return this;

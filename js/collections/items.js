@@ -25,7 +25,6 @@ var ItemList = Backbone.PageableCollection.extend({
         return "https://api.nutritionix.com/v1_1/search/" + this.query + '?' + $.param(this.data);
     },
 
-
     parse: function (res) {
         return res.hits;
     }
