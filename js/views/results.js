@@ -44,7 +44,7 @@ app.ResultsView = Backbone.View.extend({
     },
 
     //Fire the search function on Enter keypress
-    searchOnEnter: function () {
+    searchOnEnter: function (event) {
         if (event.which == ENTER_KEY && this.$input.val()) {
             event.preventDefault();
             this.search();
