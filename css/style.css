@@ -1,0 +1,51 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    /*background: url("../img/PageBackground.jpg");
+    background-size: 100% 100%;*/
+    background-color: #5C5863;
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.list-group-item {
+    color: #5C5863
+}
+
+.container-fluid {
+    margin: 1% auto;
+}
+
+.title {
+    text-align: center;
+}
+
+#head {
+    text-align: center;
+}
+
+#searchForm {
+    margin: 1%;
+}
+
+#addToList, #removeFromList {
+    float: right;
+    transition: all .2s ease-in-out;
+}
+
+#addToList:hover {
+    transform: scale(1.5);
+}

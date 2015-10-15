@@ -11,7 +11,7 @@
 
     <!-- Load fonts -->
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- CSS for jQuery DataTables -->
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
 
@@ -26,7 +26,7 @@
 <body>
 <h1 id="head">Calorie Tracker</h1>
 
-<div class="container-fluid">
+<div class="container">
     <!-- Search form -->
     <form class="form-inline" id="searchForm">
         <div class="form-group">
@@ -50,8 +50,10 @@
     {{#if []}}
 
     <ul id="paginate">{{#each []}}
-        <li class="hit list-group-item" data-id="{{id}}"> {{this.name}} <br> Calories: {{this.calories}}
-            <input id='addToList' type="button" value="Add Product"></li>
+        <li class="hit list-group-item" data-id="{{id}}"> {{this.name}}
+            <i id="addToList" class="fa fa-plus fa-2x"></i> <br>
+            Calories: {{this.calories}}
+            </li>
         {{/each}}
     </ul>
 
@@ -66,8 +68,8 @@
     <h2 class="title">Your selection</h2>
     <ul>
         {{#each []}}
-        <li class="selected_hits list-group-item" data-id="{{id}}"> {{this.name}} <br> Calories: {{this.calories}}
-            <input id='removeFromList' type="button" value="Remove Product"></li>
+        <li class="selected_hits list-group-item" data-id="{{id}}"> {{this.name}} <br> <input id='removeFromList' type="button" value="Remove Product">Calories: {{this.calories}}
+            </li>
         {{/each}}
     </ul>
 </script>
