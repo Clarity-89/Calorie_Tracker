@@ -46,6 +46,11 @@ ul {
     transition: all .2s ease-in-out;
 }
 
-#addToList:hover {
+#addToList:hover, #removeFromList:hover {
     transform: scale(1.5);
+}
+
+.hit:hover {
+    cursor: pointer;
+    background-color: #d1d1d1;
 }

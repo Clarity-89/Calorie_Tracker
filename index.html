@@ -53,7 +53,7 @@
         <li class="hit list-group-item" data-id="{{id}}"> {{this.name}}
             <i id="addToList" class="fa fa-plus fa-2x"></i> <br>
             Calories: {{this.calories}}
-            </li>
+        </li>
         {{/each}}
     </ul>
 
@@ -68,8 +68,10 @@
     <h2 class="title">Your selection</h2>
     <ul>
         {{#each []}}
-        <li class="selected_hits list-group-item" data-id="{{id}}"> {{this.name}} <br> <input id='removeFromList' type="button" value="Remove Product">Calories: {{this.calories}}
-            </li>
+        <li class="hit list-group-item" data-id="{{id}}"> {{this.name}}
+            <i id='removeFromList' class="fa fa-minus fa-2x"></i><br>
+            Calories: {{this.calories}}
+        </li>
         {{/each}}
     </ul>
 </script>
