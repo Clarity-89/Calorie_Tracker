@@ -29,6 +29,7 @@ app.ResultsView = Backbone.View.extend({
         //console.log('rendering');
         this.$hits.html(this.template(this.collection.toJSON()));
         $("#paginator").append(paginator.render().$el);
+
         return this;
     },
     /*Function to send an AJAX request and retrieve the data according to the search keyword and store it in the model*/
@@ -57,8 +58,16 @@ app.ResultsView = Backbone.View.extend({
         e.preventDefault();
         var id = $(e.currentTarget).parent().data("id");
         var item = app.Items.get(id);
-        console.log(item);
-        app.Selected.add(item);
+        console.log(item.attributes);
+        //Create a new model with the attributes of a Items model in order to be able to save it to local storage
+        var selItem = new app.SelectedItem({
+            id: item.attributes.id,
+            name: item.attributes.name,
+            calories: item.attributes.calories
+        });
+        app.Selected.add(selItem);
+        selItem.save();
+
     }
 });
 

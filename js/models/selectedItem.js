@@ -4,10 +4,11 @@
 var app = app || {};
 
 // Model to store items added by user
-app.selectedItem = Backbone.Model.extend({
+app.SelectedItem = Backbone.Model.extend({
 
     defaults: {
         name: '',
         calories: 0
     }
 });
+

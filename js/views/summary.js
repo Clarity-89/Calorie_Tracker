@@ -17,12 +17,15 @@ app.SummaryView = Backbone.View.extend({
 
     initialize: function () {
         console.log('Summary initialized');
+
         this.$selection = this.$('#selection');
-        this.listenTo(app.Selected, 'all', this.render);
+        this.listenTo(this.collection, 'all', this.render);
+        this.render();
     },
 
     render: function () {
         //console.log('rendering summary');
+        //app.Selected.localStorage = new Backbone.LocalStorage('selected-items');
 
         //Calculate the total amount of calories in the selection of items
         var total = 0;
