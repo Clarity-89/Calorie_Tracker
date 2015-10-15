@@ -24,6 +24,7 @@ ul {
 
 .list-group-item {
     color: #5C5863;
+    transition: all .2s ease-in-out;
 }
 
 .container-fluid {
@@ -31,7 +32,8 @@ ul {
 }
 
 .title {
-    text-align: center;
+    margin-left: 10%;
+    margin-right: 5%;
     display: inline;
 }
 
@@ -44,6 +46,7 @@ ul {
 }
 
 #addToList, #removeFromList {
+    display: none;
     float: right;
     transition: all .2s ease-in-out;
 }
@@ -57,6 +60,9 @@ ul {
     background-color: #d1d1d1;
 }
 
+.hit:hover #addToList, .hit:hover #removeFromList{
+    display: inline;
+}
 #totalCal {
     font-size: 16px;
 }
@@ -68,21 +74,22 @@ ul {
 }
 
 #clear-selection {
-    float: right;
+    /*float: right;*/
     transition: all .2s ease-in-out;
-    margin-right: 10px;
-    margin-bottom: 4%;
+
 }
-#clear-selection:hover{
+
+#clear-selection:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
+
 #clear-selection:hover:after {
-    content: 'Clear selected items';
+    content: 'Clear all';
     position: absolute;
     color: #fff;
     font-size: 12px;
-    right: 30px;
+    left: 30px;
     bottom: 0;
 
 }
