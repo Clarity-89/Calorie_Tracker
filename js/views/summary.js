@@ -12,7 +12,8 @@ app.SummaryView = Backbone.View.extend({
     template2: Handlebars.compile($('#total').html()),
 
     events: {
-        'click #removeFromList': 'removeItem'
+        'click #removeFromList': 'removeItem',
+        'click #clear-selection': 'clearSelection'
     },
 
     initialize: function () {
@@ -44,5 +45,13 @@ app.SummaryView = Backbone.View.extend({
         var item = this.collection.get(id);
         this.collection.remove(item);
         item.destroy();
+    },
+
+    // Remove all selected items from the collection and local storage
+    clearSelection: function () {
+        var length = this.collection.length;
+        for (var i = 0; i < length; i++) {
+            this.collection.at(0).destroy();
+        }
     }
 });

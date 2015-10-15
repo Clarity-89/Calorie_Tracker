@@ -58,9 +58,10 @@ ul {
     background-color: #d1d1d1;
 }
 
-.hit:hover #addToList, .hit:hover #removeFromList{
+.hit:hover #addToList, .hit:hover #removeFromList {
     display: inline;
 }
+
 #totalCal {
     font-size: 16px;
 }
@@ -72,7 +73,7 @@ ul {
 }
 
 #clear-selection {
-   transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 #clear-selection:hover {
