@@ -11,8 +11,6 @@ html, body {
 
 body {
     font-family: 'Lato', sans-serif;
-    /*background: url("../img/PageBackground.jpg");
-    background-size: 100% 100%;*/
     background-color: #5C5863;
     color: #fff;
 }
@@ -74,9 +72,7 @@ ul {
 }
 
 #clear-selection {
-    /*float: right;*/
-    transition: all .2s ease-in-out;
-
+   transition: all .2s ease-in-out;
 }
 
 #clear-selection:hover {
@@ -91,5 +87,4 @@ ul {
     font-size: 12px;
     left: 30px;
     bottom: 0;
-
 }
