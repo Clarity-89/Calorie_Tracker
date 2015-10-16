@@ -21,6 +21,7 @@ app.SummaryView = Backbone.View.extend({
 
         this.$selection = this.$('#selection');
         this.listenTo(this.collection, 'all', this.render);
+
         this.render();
     },
 
@@ -34,7 +35,14 @@ app.SummaryView = Backbone.View.extend({
         });
         var source = {total: total.toFixed(2)};
         this.$selection.html(this.template(this.collection.toJSON())).append(this.template2(source));
-        if (this.collection.length > 0) $('#clear-selection').css('display', 'inline-block');
+        if (this.collection.length > 0) {
+            $('#clear-selection').css('display', 'inline-block');
+            if (this.collection.length > 10) {
+                app.setFooter('after');
+            }
+        } else {
+            app.setFooter('before');
+        }
         return this;
     },
 
