@@ -31,10 +31,7 @@ app.ResultsView = Backbone.View.extend({
         if (this.collection.length > 0) {
             $("#paginator").append(paginator.render().$el);
             app.setFooter('after');
-        } else {
-            app.setFooter('before');
         }
-
         return this;
     },
     /*Function to send an AJAX request and retrieve the data according to the search keyword and store it in the model*/

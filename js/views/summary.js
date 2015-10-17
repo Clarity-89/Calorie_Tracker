@@ -40,7 +40,7 @@ app.SummaryView = Backbone.View.extend({
             if (this.collection.length > 10) {
                 app.setFooter('after');
             }
-        } else {
+        } else if (this.collection.length === 0 && app.Items.length === 0) {
             app.setFooter('before');
         }
         return this;
