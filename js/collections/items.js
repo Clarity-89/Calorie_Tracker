@@ -16,7 +16,7 @@ var ItemList = Backbone.PageableCollection.extend({
     data: {
         "appId": "13957b27",
         "appKey": "634647fd3fadbe686dbaacdbea287beb",
-        "fields": "item_name,nf_calories",
+        "fields": "item_name,nf_calories,nf_serving_weight_grams,nf_serving_size_unit,nf_serving_size_qty",
         results: '0:50'
     },
 
@@ -26,6 +26,7 @@ var ItemList = Backbone.PageableCollection.extend({
     },
 
     parse: function (res) {
+        console.log(res.hits)
         return res.hits;
     }
 

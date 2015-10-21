@@ -19,6 +19,8 @@ app.Item = Backbone.Model.extend({
             return {
                 id: this.cid + new Date().valueOf(), //Generate semi-unique id for an item
                 name: res.fields.item_name,
+                size: res.fields.nf_serving_weight_grams ? parseInt(res.fields.nf_serving_weight_grams, 10) + ' ' + 'g' :
+                res.fields.nf_serving_size_qty + ' ' + res.fields.nf_serving_size_unit,
                 calories: res.fields.nf_calories
             };
         }
