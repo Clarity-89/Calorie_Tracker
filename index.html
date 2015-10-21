@@ -51,12 +51,13 @@
 
     <ul>{{#each []}}
         <li class="hit list-group-item" data-id="{{id}}"> {{this.name}}
-            <i id="addToList" class="fa fa-plus fa-2x"></i> <br>
+             <br>
             Size:{{#if this.size}}
             {{this.size}}
             {{else}}
             {{this.quantity}} {{this.unit}}
             {{/if}}
+            <i id="addToList" class="fa fa-plus fa-2x"></i>
             <br>
             Calories: {{this.calories}}
         </li>
