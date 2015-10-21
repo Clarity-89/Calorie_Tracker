@@ -64,6 +64,7 @@ app.ResultsView = Backbone.View.extend({
         var selItem = new app.SelectedItem({
             id: item.attributes.id,
             name: item.attributes.name,
+            size: item.attributes.size,
             calories: item.attributes.calories
         });
         app.Selected.add(selItem);

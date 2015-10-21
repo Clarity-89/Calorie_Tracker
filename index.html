@@ -51,12 +51,8 @@
 
     <ul>{{#each []}}
         <li class="hit list-group-item" data-id="{{id}}"> {{this.name}}
-             <br>
-            Size:{{#if this.size}}
-            {{this.size}}
-            {{else}}
-            {{this.quantity}} {{this.unit}}
-            {{/if}}
+            <br>
+            Size: {{this.size}}
             <i id="addToList" class="fa fa-plus fa-2x"></i>
             <br>
             Calories: {{this.calories}}
@@ -76,7 +72,10 @@
     <ul>
         {{#each []}}
         <li class="hit list-group-item" data-id="{{id}}"> {{this.name}}
-            <i id='removeFromList' class="fa fa-minus fa-2x"></i><br>
+            <br>
+            Size: {{this.size}}
+            <i id='removeFromList' class="fa fa-minus fa-2x"></i>
+            <br>
             Calories: {{this.calories}}
         </li>
         {{/each}}
