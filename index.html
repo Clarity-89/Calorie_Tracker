@@ -9,6 +9,9 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
     <!-- Load fonts -->
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -27,13 +30,17 @@
 <h1 id="head">Calorie Tracker</h1>
 
 <div class="container">
+
     <!-- Search form -->
     <form autocomplete="off" class="form-inline" id="searchForm">
-        <div class="form-group">
-            <input class="form-control" id="search" type="text" placeholder="Search..." required>
-            <input class="btn btn-default" id='searchButton' type="button" value="Search">
+        <div class="form-group has-feedback">
+            <label class="sr-only" for="search">Search</label>
+            <input type="text" class="form-control" id="search" placeholder="Search...">
+            <span class="glyphicon glyphicon-search form-control-feedback" aria-hidden="true"></span>
         </div>
+        <input class="btn btn-default" id='searchButton' type="button" value="Search">
     </form>
+
     <div class="row">
         <div class="col-md-6">
             <div id="hits"></div>
@@ -42,6 +49,7 @@
 
         <div id="selection" class="col-md-6"></div>
     </div>
+
 </div>
 
 <!-- Template for displaying search results -->
