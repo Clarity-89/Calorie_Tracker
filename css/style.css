@@ -104,3 +104,17 @@ a {
 .has-feedback .form-control-feedback {
     color: #5C5863;
 }
+
+#selected {
+    max-height: 568px;
+    overflow-y: auto;
+}
+
+#total-cals{
+    margin-top: 15px;
+}
+@media only screen and (max-device-width: 780px) {
+    .footer {
+        position: relative;
+    }
+}

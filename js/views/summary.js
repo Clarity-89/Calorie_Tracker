@@ -34,7 +34,8 @@ app.SummaryView = Backbone.View.extend({
             total += el.get('calories');
         });
         var source = {total: total.toFixed(2)};
-        this.$selection.html(this.template(this.collection.toJSON())).append(this.template2(source));
+        this.$selection.html(this.template(this.collection.toJSON()));
+        this.$('#total-cals').html(this.template2(source));
         if (this.collection.length > 0) {
             $('#clear-selection').css('display', 'inline-block');
             if (this.collection.length > 10) {
